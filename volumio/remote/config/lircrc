@@ -35,7 +35,7 @@ end
 begin
 prog = irexec
 button = KEY_MENU
-config = /bin/bash /home/volumio/raspdacmini/oled/ap_card.sh toggle_input
+config = /bin/bash /home/volumio/RaspDacMini/volumio/oled/ap_card.sh toggle_input
 end
 
 begin

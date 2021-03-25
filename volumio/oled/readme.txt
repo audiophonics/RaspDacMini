@@ -10,7 +10,7 @@ Date (d/m/y) 	: 	25/03/2021
 
 Abstract --------------------------------------------------------------
 
-Use this script on a fresh Volumio install to add support for Audiophonics EVO SABRE secondary display.
+Use this script on a fresh Volumio install to add support for Audiophonics RaspDac Mini secondary display.
 
 Software (python) uses API(s) available in the distribution to gather and display data regarding playback, sampling rate, volume...etc. 
 This script contains a set of instruction for automatic installation of this software for a Volumio distribution running on a Raspberry Pi4 mounted on Audiophonics RaspDac Mini module

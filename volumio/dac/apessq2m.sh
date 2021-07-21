@@ -13,8 +13,8 @@ else
 	toggle_input)
 		if ! [[ $card_id -eq -1 ]]; then
 			if [[ `amixer sget -c $card_id  'I2S/SPDIF Select' | grep Item0: | awk '{print $2}' ` == *I2S* ]]
-			then amixer sset -c $card_id  'I2S/SPDIF Select' SPDIF
-			else amixer sset -c $card_id  'I2S/SPDIF Select' I2S
+			then amixer sset -c $card_id  'I2S/SPDIF Select' SPDIF;  curl -m 0.5 localhost:4153/input=SPDIF > /dev/null 2>&1 &
+			else amixer sset -c $card_id  'I2S/SPDIF Select' I2S;  curl -m 0.5 localhost:4153/input=I2S > /dev/null 2>&1 &
 			fi
 		fi
 	;;
@@ -35,14 +35,12 @@ else
                     amixer sset -c $card_id 'FIR Filter Type' "${array[0]}" > /dev/null
                     echo "${array[0]}"
                     normalized=$(echo "${array[0]}" | sed "s/ \+/_/g")
-                    curl -m 0.5 localhost:4150/ap-display/filter_change/"${normalized}" > /dev/null 2>&1 &
                     break
                 fi
                 if [ "$i" = "$current_filter" ]; then
                     amixer sset -c $card_id 'FIR Filter Type' "${array[$index+1]}" > /dev/null
                     echo "${array[$index+1]}"
                     normalized=$(echo "${array[$index+1]}" | sed "s/ \+/_/g")
-                    curl -m 0.5 localhost:4150/ap-display/filter_change/"${normalized}" > /dev/null 2>&1 &
                     break
                 fi
                 ((index++))

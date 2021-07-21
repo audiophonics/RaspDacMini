@@ -1,0 +1,3 @@
+
+%audiophonics ALL=(ALL) NOPASSWD: /bin/sh /home/volumio/RaspDacMini/volumio/apts_web_interface/ap_modules/timezone/settime.sh *
+started at 14:37:53 finished at 14:37:54

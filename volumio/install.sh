@@ -3,7 +3,7 @@
 start_time="$(date +"%T")"
 starting_dir=${PWD}
 
-echo "***   Installation of EVO_SABRE for Volumio" 
+echo "***   Installation of RaspDac Mini OLED for Volumio" 
 echo "***   _____________________________________" 
 
 # Install modules
@@ -16,6 +16,6 @@ node enable_volumio_wizard.js &&
 
 # ---------------------------------------------------
 # Say something nice and exit
-echo "* End of installation : EVO_SABRE for Volumio"
+echo "* End of installation : RaspDac Mini OLED for Volumio"
 echo started at $start_time finished at "$(date +"%T")"
 exit 0

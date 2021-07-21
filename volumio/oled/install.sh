@@ -10,10 +10,10 @@ install_dep_volumio() {
 		apt-get update > /dev/null 2>> install_log.txt	&&
 		apt-get install build-essential  > /dev/null 2>> install_log.txt && 
 		echo "... OK" && return true||
-		printf "Fail, this version of Volumio lacks some dependencies for software compilation.\nTrying to workaround using this technique : https://community.volumio.org/t/cannot-install-build-essential-package/46856/16 ..."
+		printf "Fail, this version of Volumio lacks some dependencies for software compilation.\nTrying to workaround using this technique : https://community.volumio.org/t/cannot-install-build-essential-package/46856/16 ..." &&
 		bash Workaround_BuildEssentials.sh  > /dev/null 2>> install_log.txt && 
 		echo "... OK" ||  
-		echo "... Failed again. The OLED display will not be installed." 
+		echo "... Failed again. The OLED display will not be installed." &&
 		exit 1
 	fi
 }

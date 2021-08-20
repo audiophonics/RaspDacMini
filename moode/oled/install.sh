@@ -2,7 +2,7 @@
 
 
 start_time="$(date +"%T")"
-echo "* Installing : Evo Sabre OLED#2"
+echo "* Installing : RaspDac Mini OLED"
 echo "" > install_log.txt
 
 # ---------------------------------------------------
@@ -52,10 +52,10 @@ echo "OLED service enabled ( /etc/systemd/system/oled.service )"
 if lsmod | grep "spidev" &> /dev/null ; then
   systemctl start oled
   echo "Display should turn on."
-  echo "*End of installation : Evo Sabre OLED#2 (spidev module is already loaded, so no reboot is required)"
+  echo "*End of installation : RaspDac Mini OLED (spidev module is already loaded, so no reboot is required)"
   
 else
-  echo "*End of installation : Evo Sabre OLED#2 (spidev module is NOT loaded : a reboot is required)"
+  echo "*End of installation : RaspDac Mini OLED (spidev module is NOT loaded : a reboot is required)"
 fi
 
 echo started at $start_time finished at "$(date +"%T")" >> install_log.txt

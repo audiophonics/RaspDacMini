@@ -291,17 +291,19 @@ Oled.prototype.CacheGlyphsData = function(string){
 	if(!this.hex_font){console.log("font not loaded"); return}
 	let used_chars = new Set(string);
 	for(used_char of used_chars){
-		let glyph_raw_data = this.hex_font[used_char.charCodeAt()];
-		let data = glyph_raw_data.data
-		let length = glyph_raw_data.length;
-		let height = 0;
-		let binary_glyph = [];
-		let binary_row_string;
-		for (var i = 0; i < data.length ; i += 1) {
-			height++;
-			binary_row_string = data[i].toString(2);
-			while( binary_row_string.length < length ){ binary_row_string = "0" + binary_row_string; }
-			binary_glyph.push(binary_row_string);
+		let height = 0,
+		binary_glyph = [],
+		binary_row_string = "",
+		glyph_raw_data = this.hex_font[used_char.charCodeAt()];
+		if(glyph_raw_data){
+			let data = glyph_raw_data.data,
+			length = glyph_raw_data.length;
+			for (var i = 0; i < data.length ; i += 1) {
+				height++;
+				binary_row_string = data[i].toString(2);
+				while( binary_row_string.length < length ){ binary_row_string = "0" + binary_row_string; }
+				binary_glyph.push(binary_row_string);
+			}
 		}
 		this.cached_glyph[used_char] = {
 			data : binary_glyph,
@@ -309,8 +311,8 @@ Oled.prototype.CacheGlyphsData = function(string){
 			height : height
 		};
 	}
-	
 }
+
 
 Oled.prototype.writeStringUnifont = function(string) {
 	

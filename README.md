@@ -5,7 +5,7 @@ This repository holds sources and methods for installing the specific hardware f
 
 ## Currently supported : 
  
-### Volumio
+### Volumio & moOde audio
 * Installation of OLED Display
 * Installation of IR remote
 * Installation of aptswi (web interface with some system options) 
@@ -38,6 +38,8 @@ cd RaspDacMini
 # for Volumio
 cd volumio
 
+# for moOde
+cd moode
 ```
 * Run the installation script **as root** to install all available features
 ```bash

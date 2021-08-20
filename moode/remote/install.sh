@@ -9,8 +9,8 @@ apt-get install -y lirc > /dev/null 2>> install_log.txt
 
 # ---------------------------------------------------
 # Enable gpio-ir driver to allow hardware interfacing
-if ! grep -q "dtoverlay=gpio-ir,gpio_pin=4" "/boot/userconfig.txt"; then
-    echo "dtoverlay=gpio-ir,gpio_pin=4"  >> /boot/userconfig.txt
+if ! grep -q "dtoverlay=gpio-ir,gpio_pin=4" "/boot/config.txt"; then
+    echo "dtoverlay=gpio-ir,gpio_pin=4"  >> /boot/config.txt
 fi
 rsync -a config/ /etc/lirc/
 

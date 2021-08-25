@@ -392,9 +392,12 @@ ap_oled.prototype.deep_sleep = function(){
 if (this.page === "deep_sleep") return;
 	clearInterval(this.update_interval);
 	this.page = "deep_sleep";
+	this.driver.buffer.fill(0x00);
+	this.driver.update(true);
 	this.driver.turnOffDisplay();
 
 }
+
 
 ap_oled.prototype.clock_mode = function(){
 if (this.page === "clock") return;

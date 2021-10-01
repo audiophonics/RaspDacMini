@@ -48,15 +48,6 @@ function make_html(){
 			        <input type = "hidden" name="config_key" value="deep_sleep_after" >
 					<input type = "hidden" name="curl_rt" value="1" >
 			    </form>
-			    <form id ="dim" action="/" method="post"> 
-			        <label for="value">Delay (dim) :</label>
-			        <input type = "number" min="1" placeholder="in seconds" name="value" value=${config.dim_after} >
-			        <button type="submit">Set</button><br>
-			        <input type = "hidden" name="target_module" value="${module.exports.title}" >
-			        <input type = "hidden" name="target_command" value="update_config" >
-			        <input type = "hidden" name="config_key" value="dim_after" >
-					<input type = "hidden" name="curl_rt" value="1" >
-			    </form>
 			</div>
 			<div class="oled_restart">    
 			    <form id ="restart_oled" action="/" method="post"> 

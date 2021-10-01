@@ -26,7 +26,7 @@ else
 	next_filter)
 		if ! [[ $card_id -eq -1 ]]; then
             current_filter=`amixer sget -c $card_id 'FIR Filter Type' | awk '/Item0:/ {print}' | cut -d : -f 2- | sed -e "s/ '//" -e  "s/'//g"`
-            filters=`amixer sget -c 2 'FIR Filter Type' | sed -z 's/.*Items://' | sed -z 's/Item0:.*//' | sed "s/' '\+/,/g" | sed "s/'//g"`
+            filters=`amixer sget -c $card_id 'FIR Filter Type' | sed -z 's/.*Items://' | sed -z 's/Item0:.*//' | sed "s/' '\+/,/g" | sed "s/'//g"`
             array=($filters) 
             IFS="," read -a array <<< $filters
             index=0

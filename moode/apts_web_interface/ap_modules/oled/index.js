@@ -22,7 +22,7 @@ function make_html(){
 	    	<div class="oled_settings">
 			    <form id ="contrast" action="/" method="post"> 
 			        <label for="value">Contrast :</label>
-			        <input type = "number" max="254" min="1" placeholder="1 - 254" name="value" value=${config.contrast} >
+			        <input type = "number" max="254" min="0" placeholder="0 - 254" name="value" value=${config.contrast} >
 			        <button type="submit">Set</button><br>
 			        <input type = "hidden" name="target_module" value="${module.exports.title}" >
 			        <input type = "hidden" name="target_command" value="update_config" >
@@ -32,7 +32,7 @@ function make_html(){
 
 			    <form id ="sleep_after" action="/" method="post"> 
 			        <label for="value">Delay (screen saver) :</label>
-			        <input type = "number" min="1" placeholder="in seconds" name="value" value=${config.sleep_after} >
+			        <input type = "number" min="0" placeholder="in seconds" name="value" value=${config.sleep_after} >
 			        <button type="submit">Set</button><br>
 			        <input type = "hidden" name="target_module" value="${module.exports.title}" >
 			        <input type = "hidden" name="target_command" value="update_config" >
@@ -41,7 +41,7 @@ function make_html(){
 			    </form>
 			    <form id ="deep_sleep" action="/" method="post"> 
 			        <label for="value">Delay (deep sleep) :</label>
-			        <input type = "number" min="1" placeholder="in seconds" name="value" value=${config.deep_sleep_after} >
+			        <input type = "number" min="0" placeholder="in seconds" name="value" value=${config.deep_sleep_after} >
 			        <button type="submit">Set</button><br>
 			        <input type = "hidden" name="target_module" value="${module.exports.title}" >
 			        <input type = "hidden" name="target_command" value="update_config" >

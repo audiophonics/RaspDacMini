@@ -216,9 +216,9 @@ ap_oled.prototype.listen_to = function(api,frequency){
 			this.footertext = "";
 			if( !data.samplerate && !data.bitdepth && !data.bitrate ) socket.emit("getQueue"); // s'il manque des données, un autre emit permet de compléter les infos pour tout ce qui est fréquence / bitrate
 			else{
-				if ( data.samplerate ) this.footertext += data.samplerate.replace(/\s/gi,"") + " ";
-				if ( data.bitdepth   ) this.footertext += data.bitdepth.replace(/\s/gi,"") + " ";
-				if ( data.bitrate    ) this.footertext += data.bitrate.replace(/\s/gi,"") + " ";
+				if ( data.samplerate ) this.footertext += data.samplerate.toString().replace(/\s/gi,"") + " ";
+				if ( data.bitdepth   ) this.footertext += data.bitdepth.toString().replace(/\s/gi,"") + " ";
+				if ( data.bitrate    ) this.footertext += data.bitrate.toString().replace(/\s/gi,"") + " ";
 			}
 			
 			this.data = data; // attention à la position de cette commande : une fois cette assignation effectuée, plus aucune comparaison n'est possible avec l'état précédent
@@ -231,9 +231,9 @@ ap_oled.prototype.listen_to = function(api,frequency){
 		socket.on("pushQueue", (resdata)=> {
 			data = resdata[0];
 			if( !this.footertext && data ) {
-				if ( data.samplerate ) this.footertext += data.samplerate.replace(/\s/gi,"") + " ";
-				if ( data.bitdepth   ) this.footertext += data.bitdepth.replace(/\s/gi,"") + " ";
-				if ( data.bitrate    ) this.footertext += data.bitrate.replace(/\s/gi,"") + " ";
+				if ( data.samplerate ) this.footertext += data.samplerate.toString().replace(/\s/gi,"") + " ";
+				if ( data.bitdepth   ) this.footertext += data.bitdepth.toString().replace(/\s/gi,"") + " ";
+				if ( data.bitrate    ) this.footertext += data.bitrate.toString().replace(/\s/gi,"") + " ";
 			}
 		});
 		

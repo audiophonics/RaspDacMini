@@ -2,14 +2,9 @@
 case "$1" in 
 'volumio')
 	install_dep_volumio(){
-	   if dpkg -s build-essential &>/dev/null ; then
-		echo "Build-essential package is installed."
-			else
-			echo "Build-essential package missing : installing ..."
-			apt-get update > /dev/null 2>> install_log.txt	&&
-			apt-get install build-essential  > /dev/null 2>> install_log.txt && 
-			echo "... OK" && return 1 ||
-			printf "Fail, this version of Volumio lacks some dependencies for software compilation.\nTrying to workaround using this technique : https://community.volumio.org/t/cannot-install-build-essential-package/46856/16 ...\n" &&
+		if apt-get -qq install build-essential; then
+			echo "Build-essential package is installed."
+			printf "This version of Volumio lacks some dependencies for software compilation.\nTrying to workaround using this technique : https://community.volumio.org/t/cannot-install-build-essential-package/46856/16 ...\n" &&
 			bash Workaround_BuildEssentials.sh  > /dev/null 2>> install_log.txt && 
 			echo "... OK" && return 1 ||  
 			echo "... Failed again. The OLED display will not be installed." &&

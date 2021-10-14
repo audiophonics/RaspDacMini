@@ -2,7 +2,7 @@
 case "$1" in 
 'volumio')
 	install_dep_volumio(){
-		if apt-get -qq install build-essential; then
+		if apt-get -qq install build-essential 2>&1 /dev/null; then
 			echo "Build-essential package is installed."
 		else
 			printf "This version of Volumio lacks some dependencies for software compilation.\nTrying to workaround using this technique : https://community.volumio.org/t/cannot-install-build-essential-package/46856/16 ...\n" &&

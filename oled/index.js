@@ -244,8 +244,6 @@ ap_oled.prototype.listen_to = function(api,frequency){
 		var moode = new moode_listener();
 		moode.on("moode_data", (data)=>{
 
-
-
 			let exit_sleep = false;
 			if(extn_exit_sleep_mode){
 				extn_exit_sleep_mode = false;
@@ -471,7 +469,7 @@ ap_oled.prototype.playback_mode = function(){
 
 	this.refresh_action =()=>{
 		
-        if(this.plotting){ return }; // skip plotting of this frame if the pi has not finished plotting the previous frame
+        if(this.plotting){ return }; // ignorer le calcul de cette frame si la frame précédente est toujours en cours de calcul
         this.plotting = true;
         this.driver.buffer.fill(0x00);
 
@@ -488,7 +486,7 @@ ap_oled.prototype.playback_mode = function(){
                 this.driver.writeString(fonts.monospace ,1, volstring ,1,true,false);
             }    
 			
-			// repeat
+			// mode repeat
 			if(this.data.repeatSingle){
 				this.driver.setCursor(104,0);
 				this.driver.writeString(fonts.icons , 1 , "5" ,1,false,false); 
@@ -497,13 +495,13 @@ ap_oled.prototype.playback_mode = function(){
                 this.driver.writeString(fonts.icons , 1 , "4" ,1,false,false); 
             }
 			
-			// track type (flac, mp3, webradio...etc.)
+			// type de piste (flac, mp3, webradio...etc.)
 			if(this.data.trackType){
 				this.driver.setCursor(30,1);
 				this.driver.writeString(fonts.monospace , 1 , this.data.trackType ,1,false,false); 
 			}
 		
-			// string with any data we have regarding sampling rate and bitrate
+			// string contenant toutes data concernant sampling rate & bitrate
 			if(this.footertext){
 				this.driver.setCursor(0,57);
 				this.driver.writeString(fonts.monospace , 1 , this.footertext ,1,false,false); 
@@ -529,12 +527,12 @@ ap_oled.prototype.playback_mode = function(){
 
 			// track title album artist
 			if(this.text_to_display.length){ 
-				//  if the whole text is short enough to fit the whole screen
+				//  est-ce que le texte est assez court pour tenir dans toute la largeur de l'écran ? 
 				if( this.text_width <= this.width ){
 					this.driver.setCursor( 0, 17 );
 					this.driver.writeStringUnifont(this.text_to_display );  
-				}
-				else{ // text overflows the display (very likely considering it's 128px) : make the text scroll alongside its horizontal direction
+				}		
+				else{ // si le texte dépasse de la largeur de l'écran (très probable puisqu'il fait 128px) : faire scroller le texte horizontalement
 					let text_to_display = this.text_to_display;
 					text_to_display = text_to_display + " - " + text_to_display + " - ";
 					if(this.scroller_x + (this.text_width) < 0 ){
@@ -543,7 +541,6 @@ ap_oled.prototype.playback_mode = function(){
 					this.driver.cursor_x = this.scroller_x;
 					this.driver.cursor_y = 14
 					this.driver.writeStringUnifont(text_to_display);
-					//this.driver.writeStringUnifont("RadioRadioRadioRadioRadioRadio");
 				}
 			}
 			// seek data
@@ -617,7 +614,7 @@ fs.readFile("config.json",(err,data)=>{
 	);
 
 	function start_app(){
-		// check if logo has had enough time to display
+		// est-ce que le logo a eu assez de temps d'affichage ? 
 		let time_remaining = 0;
 		if(logo_start_display_time){
 			time_remaining = LOGO_DURATION - ( new Date().getTime() - logo_start_display_time.getTime() )  ;

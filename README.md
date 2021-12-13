@@ -4,7 +4,9 @@ Toolset and sources file used for customizing RPI audio distributions with RaspD
 This repository holds sources and methods for installing the specific hardware found in a RaspDac Mini  (display, remote control) and some utilities in a fresh distribution for audio playback on raspberry pi. 
 
 ## Currently supported : 
- 
+
+### No, this is not working on Volumio 3 yet. Please be patient. 
+
 ### Volumio & moOde audio
 * Installation of OLED Display
 * Installation of IR remote

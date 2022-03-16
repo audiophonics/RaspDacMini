@@ -1,0 +1,17 @@
+{
+  "name": "ssd1306",
+  "version": "1.0.0",
+  "description": "driver for SSD1306 display",
+  "main": "SSD1306.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Olivier Schwach",
+  "license": "ISC",
+  "dependencies": {
+    "rpio": "*"
+  },
+  "bundleDependencies": [
+    "rpio"
+  ]
+}

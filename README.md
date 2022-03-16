@@ -14,9 +14,20 @@ git clone https://github.com/audiophonics/RaspDacMini.git --branch volumio --sin
 cd RaspDacMini
 
 sudo sh install_rdm_volumio.sh
+
 ```
 - Display should turn on after a couple seconds.
 - Remote and DAC need a reboot to be fully working.
+```
+sudo reboot
+```
 
 ## Tested on  : 
 - Volumio 3.233 & RPI 4 Revision 1.5
+
+## Why this was so long to be released ?  
+- There already were minor differences between Pi3B+ and Pi4 version that are really hard to handle in a way that does not require maintaining 2 separate versions (I do not want that).
+- Then I found the SPI kernel module to be way less reliable in Volumio3 so I had to rewrite the OLED driver with pure bitbanging (which works surprisingly better without needing a reboot so it turns out this part is 100% an upgrade).
+- Then I found issues with 1.5 Raspberry Pi 4 revision.
+- All of this must be able to work on moOde Audio as well.
+All those reasons made testing and debugging extremely long and tedious. I apologize for the time it took.

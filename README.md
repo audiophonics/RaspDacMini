@@ -15,6 +15,8 @@ cd RaspDacMini
 
 sudo sh install_rdm_volumio.sh
 ```
+- Display should turn on after a couple seconds.
+- Remote and DAC need a reboot to be fully working.
 
 ## Tested on  : 
 - Volumio 3.233 & RPI 4 Revision 1.5

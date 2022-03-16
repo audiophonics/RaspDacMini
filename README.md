@@ -1,5 +1,15 @@
-# RaspDac Mini
+# RaspDac Mini OLED for Volumio 3
 
-- This branch is still in testing phase.
-- Once the scripting procedure is complete this repository will expose methods to build a patch for Volumio and moOde Audio on a Raspdac Mini OLED version. Same thing for piCore is WIP.
-- This approach will replace the old preconfigured images way of customizing the RDMOLED.
+## Usage : 
+- You should use this on a fresh Volumio 3 image.
+- There is no need to configure anything from the WebUi. All DAC functions and MPD are pre-configured with this script.
+- If this set of file is not working on your Volumio version, you should try to rebuild the patch from [source](https://github.com/audiophonics/RaspDacMini/tree/v2.1).
+- This was not designed for Volumio 2.
+```
+git clone https://github.com/audiophonics/RaspDacMini.git --branch volumio --single-branch
+cd RaspDacMini
+sudo sh install_rdm_volumio.sh
+```
+
+## Tested on  : 
+- Volumio 3.233 & RPI 4 Revision 1.5

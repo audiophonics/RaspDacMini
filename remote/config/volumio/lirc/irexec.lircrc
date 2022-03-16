@@ -35,7 +35,7 @@ end
 begin
 prog = irexec
 button = KEY_MENU
-config = /bin/apessq2m toggle_input & 
+config = /usr/local/bin/apessq2m toggle_input & 
 end
 
 begin

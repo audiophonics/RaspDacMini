@@ -30,4 +30,5 @@ sudo reboot
 - Then I found the SPI kernel module to be way less reliable in Volumio3 so I had to rewrite the OLED driver with pure bitbanging (which works surprisingly better without needing a reboot so it turns out this part is 100% an upgrade).
 - Then I found issues with 1.5 Raspberry Pi 4 revision.
 - All of this must be able to work on moOde Audio as well.
+
 All those reasons made testing and debugging extremely long and tedious. I apologize for the time it took.

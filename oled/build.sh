@@ -63,6 +63,7 @@ case "$target_distribution" in
 mkdir -p /usr/local/etc/
 tar -xvzf rdmoled.tar.gz -C /usr/local/etc/
 ln -s /usr/local/etc/raspdacminioled/rdmoled.sh /usr/local/bin/rdmoled
+chmod +x /usr/local/bin/rdmoled
 printf \"[Unit]
 Description=OLED Display Service
 After=volumio.service
@@ -101,6 +102,7 @@ apt install --no-install-recommends -y nodejs npm jq
 mkdir -p /usr/local/etc/
 tar -xvzf rdmoled.tar.gz -C /usr/local/etc/
 ln -s /usr/local/etc/raspdacminioled/rdmoled.sh /usr/local/bin/rdmoled
+chmod +x /usr/local/bin/rdmoled
 printf \"[Unit]
 Description=OLED Display Service
 After=mpd.service

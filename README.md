@@ -1,5 +1,8 @@
 # RaspDac Mini OLED for Volumio 3
 
+![This is the correct hardware](https://www.audiophonics.fr/img/cms/Images/Produits/13K/13300/rdmoled.png)
+
+
 ## Usage : 
 - You should use this on a fresh Volumio 3 image.
 - There is no need to configure anything from the WebUi. All DAC functions and MPD are pre-configured with this script.

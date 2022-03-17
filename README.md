@@ -5,7 +5,7 @@ This repository holds sources and methods for installing the specific hardware f
 
 ## Currently supported : 
 
-### For Volumio 3 installation you should be using files from [this reppo](https://github.com/audiophonics/RaspDacMini/tree/volumio) instead.
+### For Volumio 3 installation you should be using files from [this repo](https://github.com/audiophonics/RaspDacMini/tree/volumio) instead.
 
 ### Volumio 2 & moOde audio
 * Installation of OLED Display

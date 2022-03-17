@@ -5,9 +5,9 @@ This repository holds sources and methods for installing the specific hardware f
 
 ## Currently supported : 
 
-### No, this is not working on Volumio 3 yet. Please be patient. 
+### For Volumio 3 installation you should be using files from [this reppo](https://github.com/audiophonics/RaspDacMini/tree/volumio) instead.
 
-### Volumio & moOde audio
+### Volumio 2 & moOde audio
 * Installation of OLED Display
 * Installation of IR remote
 * Installation of aptswi (web interface with some system options) 
@@ -37,7 +37,7 @@ cd RaspDacMini
 ```
 * Each supported distribution has its own directory, enter the one corresponding to the distribution installed on your RaspDac Mini. 
 ```bash
-# for Volumio
+# for Volumio2
 cd volumio
 
 # for moOde

@@ -23,6 +23,7 @@ sudo sh install_rdm_moode.sh
 ```
 - Display should turn on after a couple minutes.
 - Remote and DAC need a reboot to be fully working.
+    - Note that after running the install_rdm_moode script, the device will reboot 2 times automatically to finalize the install. 
 ```
 sudo reboot
 ```

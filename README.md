@@ -21,7 +21,7 @@ cd RaspDacMini-moode
 sudo sh install_rdm_moode.sh
 
 ```
-- Display should turn on after a couple seconds.
+- Display should turn on after a couple minutes.
 - Remote and DAC need a reboot to be fully working.
 ```
 sudo reboot

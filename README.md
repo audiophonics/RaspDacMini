@@ -6,7 +6,7 @@
 - If this set of file is not working on your Volumio version, you should try to rebuild the patch from [source](https://github.com/audiophonics/RaspDacMini/tree/v2.1).
 - This was not designed for Volumio 2.
 
-## How to use : 
+## How to install : 
 - Connect to your RDM OLED through SSH and run the following commands : 
 ```
 git clone https://github.com/audiophonics/RaspDacMini.git --branch volumio --single-branch
@@ -22,8 +22,17 @@ sudo sh install_rdm_volumio.sh
 sudo reboot
 ```
 
+## What does it do : 
+- Automatic configuration of alsa controller within Volumio (I2S output & DSD). 
+    - Exposes a script to configure the DAC functions. Run ```apessq2m help``` to get more details.
+- Installation of a precompiled NodeJS RPIO driver. Creation of a systemd service to run the OLED Script during boot.
+    - Exposes a script to configure basic OLED functions. Run ```rdmoled``` to get more details.
+    - You can disable / enable the display by running ```sudo systemctl disable oled```  / ```sudo systemctl enable oled```
+- Installation LIRC from apt. Creation a systemd service to run LIRC & IREXEC during boot.
+
 ## Tested on  : 
 - Volumio 3.233 & RPI 4 Revision 1.5
+- Volumio 3.233 & RPI 3B+
 
 ## Why this was so long to be released ?  
 - There already were minor differences between Pi3B+ and Pi4 version that are really hard to handle in a way that does not require maintaining 2 separate versions (I do not want that).

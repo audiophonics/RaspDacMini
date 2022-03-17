@@ -39,4 +39,5 @@ sudo reboot
 
 ## Tested on  : 
 - moOde Audio 8.00 & RPI 3B+
+- moOde Audio 8.00 & RPI 4B Revision 1.4
 

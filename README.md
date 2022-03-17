@@ -12,9 +12,11 @@
 ## How to install : 
 - Connect to your RDM OLED through SSH and run the following commands : 
 ```
-git clone https://github.com/audiophonics/RaspDacMini.git --branch moode --single-branch
+wget https://github.com/audiophonics/RaspDacMini/archive/moode.zip
 
-cd RaspDacMini
+unzip moode.zip
+
+cd RaspDacMini-moode
 
 sudo sh install_rdm_moode.sh
 

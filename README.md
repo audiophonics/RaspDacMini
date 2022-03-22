@@ -19,6 +19,8 @@ cd RaspDacMini
 sudo sh install_rdm_volumio.sh
 
 ```
+- This last command will ask you for a password, which is volumio defaut password. 
+
 - Display should turn on after a couple seconds.
 - Remote and DAC need a reboot to be fully working.
 ```

@@ -39,6 +39,10 @@ mkdir -p $temp_folder
 cd "$current_folder"
 cp -rL ./ $temp_folder/
 
+
+cd "$temp_folder"/modules/basicfonts
+npm install
+
 cd "$temp_folder"/modules/lightbwgraphics
 npm install "$temp_folder"/modules/basicfonts
 cd $temp_folder
@@ -128,7 +132,41 @@ systemctl restart oled
 	
 ;;
 'picore')
+
 	echo configuring directory tree for piCorePlayer
+	tce-load -wi git.tcz compiletc.tcz python3.8.tcz python3.8-pip.tcz
+	cd "$temp_folder"/raspdacminioled
+	npm install "$temp_folder"/modules/logitechmediaserver 
+	cd "$temp_folder"
+	
+	
+	# build a tcz on the fly for all the oled routines
+	mkdir -p "$temp_folder"/release/usr/local/etc/
+	cp -rL "$temp_folder"/raspdacminioled "$temp_folder"/release/usr/local/etc/
+	printf "
+	#!/bin/sh
+	cd /usr/local/etc/raspdacminioled
+	sudo node /usr/local/etc/raspdacminioled/index.js lms &
+	exit 0
+	"> "$temp_folder"/release/onload.sh	
+	
+	echo "node.tcz"> "$temp_folder"/release/dependencies.txt
+	sh "$current_folder"/../nodebin/build_tcz.sh rdmoled release
+	
+	# provide a script for automatic installation
+	printf "
+	#!/bin/sh
+	tce-load -wic gcc_libs
+	tce-load -ic node.tcz rdmoled.tcz
+	"> "$temp_folder"/installrdm_oled.sh
+	
+	
+	mkdir -p $current_folder/release 
+	cp "$current_folder"/../nodebin/release/node.tcz node.tcz
+	tar -cvf rdm_"$target_distribution"_oled.tar rdmoled.tcz rdmoled.tcz.md5.txt rdmoled.tcz.dep node.tcz installrdm_oled.sh
+	
+	cp rdm_"$target_distribution"_oled.tar $current_folder/release 
+	
 ;;
 esac 
 

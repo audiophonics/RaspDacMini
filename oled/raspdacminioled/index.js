@@ -793,7 +793,6 @@ fs.readFile("config.json",(err,data)=>{
 		}
 		
 		setTimeout( ()=>{
-			GRAPHICS.turnOffDisplay();
 			OLED.playback_mode();
 			var streamer_poller = OLED.listen_to( distro,1000 );
 			var network_poller = OLED.listen_to( "ip",  1000 );

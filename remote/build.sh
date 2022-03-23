@@ -14,8 +14,9 @@ printf "#!/bin/bash
 
 # ---------------------------------------------------
 # Install dependencies 
-apt-get update
-apt-get install --no-install-recommends -y lirc
+timedatectl set-local-rtc 0
+apt update -y
+apt install --no-install-recommends -y lirc
 
 # ---------------------------------------------------
 # Enable gpio-ir driver to allow hardware interfacing

@@ -73,13 +73,8 @@ and that should be all for Volumio.
 ```
 sudo apt update -y 
 ``` 
-moOde does not have nodejs installed by default, which is required to build and to run the display. However, the compilation script uses ```apt``` to automatically install nodejs when building the patch. The resulting patch also calls ```apt``` to ensure this dependency is met when applying the patch. So you do not have to worry about the nodejs part, which is taken care of under the hood.
-
-### Run patch building script
-```
-sudo apt update -y
-``` 
 moOde comes with a compilation toolchain but does not have nodejs installed by default, which is required to build and to run the display. However, the compilation script uses ```apt``` to automatically install nodejs when building the patch. The resulting patch also calls ```apt``` to ensure this dependency is met when applying the patch. So all this is taken care of under the hood.
+
 
 ### Fetch source files
 ```

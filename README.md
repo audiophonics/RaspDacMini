@@ -72,7 +72,6 @@ and that should be all for Volumio.
 ### Install base dependencies
 ```
 sudo apt update -y 
-sudo apt install -y build-essential
 ``` 
 moOde does not have nodejs installed by default, which is required to build and to run the display. However, the compilation script uses ```apt``` to automatically install nodejs when building the patch. The resulting patch also calls ```apt``` to ensure this dependency is met when applying the patch. So you do not have to worry about the nodejs part, which is taken care of under the hood.
 
